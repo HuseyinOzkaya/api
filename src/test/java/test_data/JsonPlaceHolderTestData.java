@@ -5,12 +5,12 @@ import java.util.Map;
 
 public class JsonPlaceHolderTestData {
 
-    public Map<String, Object> expectedDataSetUp(){
+    public Map<String, Object> expectedDataSetUp(Integer userId, String title, Boolean completed ){
 
         Map<String, Object> expectedData = new HashMap<>();
-        expectedData.put("usedId", 66.0);
-        expectedData.put("title", "Tidy your room");
-        expectedData.put("completed", false);
+        expectedData.put("usedId", userId);
+        expectedData.put("title", title);
+        expectedData.put("completed", completed);
         return expectedData;
 
     }
