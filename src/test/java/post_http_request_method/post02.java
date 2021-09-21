@@ -43,7 +43,7 @@ public class post02 extends JsonPlaceHolderBaseUrl {
 
         //2.Step : Set the expected data
         JsonPlaceHolderTestData expectedData = new JsonPlaceHolderTestData();
-        Map<String, Object> expectedDataMap = expectedData.expectedDataSetUp(55, "Tidy your room", false);
+        Map<String, Object> expectedDataMap = expectedData.expectedDataSetUpWithAllKeys(55, "Tidy your room", false);
 
         //3.Step : Send request get response
 

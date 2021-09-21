@@ -40,7 +40,7 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
 
         //2.Step : Set the request body
         JsonPlaceHolderTestData requestBody = new JsonPlaceHolderTestData();
-        Map<String, Object> requestBodyMap = requestBody.expectedDataSetUp(21, "wash the dishes", false);
+        Map<String, Object> requestBodyMap = requestBody.expectedDataSetUpWithAllKeys(21, "wash the dishes", false);
 
         //3.Step : Sens the request and get the response
         Response response = given().spec(spec).contentType(ContentType.JSON).body(requestBodyMap).when().put("/{first}/{second}");
