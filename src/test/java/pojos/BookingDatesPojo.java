@@ -7,11 +7,13 @@ public class BookingDatesPojo {
 
     public BookingDatesPojo() {
     }
+
     public BookingDatesPojo(String checkin, String checkout) {
         super();
         this.checkin = checkin;
         this.checkout = checkout;
     }
+
     public String getCheckin() {
         return checkin;
     }
@@ -24,6 +26,7 @@ public class BookingDatesPojo {
     public void setCheckout(String checkout) {
         this.checkout = checkout;
     }
+
     @Override
     public String toString() {
         return "BookingDatesPojo{" +
@@ -32,4 +35,3 @@ public class BookingDatesPojo {
                 '}';
     }
 }
-
