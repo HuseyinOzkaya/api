@@ -1,6 +1,12 @@
 package pojos;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties (ignoreUnknown = true)
+
 public class JsonPlaceHolderPojo {
+
+
 
     //Create private variables
     private Integer userId;
