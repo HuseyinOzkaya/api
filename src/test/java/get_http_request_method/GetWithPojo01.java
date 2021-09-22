@@ -7,6 +7,7 @@ import pojos.BookingDatesPojo;
 import pojos.BookingPojo;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.*;
 
 public class GetWithPojo01 extends HerOkuAppBaseUrl {
 /*
@@ -41,8 +42,8 @@ public class GetWithPojo01 extends HerOkuAppBaseUrl {
         spec.pathParams("first", "booking", "second", 2);
 
         //2.Step : Set the expected data
-        BookingDatesPojo bookingDates = new BookingDatesPojo("2016-02-05","2021-01-16");
-        BookingPojo booking = new BookingPojo("Mary", "Smith", 647, false, bookingDates, "Breakfast");
+        BookingDatesPojo bookingDates = new BookingDatesPojo("2016-12-06","2020-11-20");
+        BookingPojo expectedData = new BookingPojo("Jim", "Jackson", 502, true, bookingDates, null);
 
 
         //3.Step : Send the request and get the response
@@ -53,14 +54,18 @@ public class GetWithPojo01 extends HerOkuAppBaseUrl {
         BookingPojo actualData = response.as(BookingPojo.class);
         System.out.println(actualData);
 
+        assertEquals(200,response.getStatusCode());
+        assertEquals("First name are not matching",expectedData.getFirstname(),actualData.getFirstname());
+        assertEquals("Last name are not matching",expectedData.getLastname(),actualData.getLastname());
+        assertEquals("Total prices are not matching",expectedData.getTotalprice(),actualData.getTotalprice());
+        assertEquals("Deposit pad is not matching",expectedData.getDepositpaid(),actualData.getDepositpaid());
+        assertEquals("Check in dates are not matching",expectedData.getBookingdates().getCheckin(),actualData.getBookingdates().getCheckin());
+        assertEquals("Check out date are not matching",expectedData.getBookingdates().getCheckout(),actualData.getBookingdates().getCheckout());
+        assertEquals("Additional needs are not matching",expectedData.getAdditionalneeds(),actualData.getAdditionalneeds());
 
 
-
-
-
-
-
+        }
 
 
     }
-}
+
