@@ -51,7 +51,7 @@ public class Get01 extends RestApiExampleUrl {
 
 //        System.out.println("data.employee_salary => " + json1.getString("data.employee_salary"));
 
-        Assert.assertTrue(Integer.parseInt(json.getString("data.employee_salary"))<Integer.parseInt(json1.getString("data.employee_salary")));
+        Assert.assertTrue("The expected data does not match!", Integer.parseInt(json.getString("data.employee_salary"))<Integer.parseInt(json1.getString("data.employee_salary")));
 
     }
 
