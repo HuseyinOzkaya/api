@@ -48,7 +48,16 @@ public class Get10 extends GoRestApiBaseUrl {
         GoRestPojo actualDataPojo = JsonUtil.convertJsonToJava(response.asString(),GoRestPojo.class);
         System.out.println(actualDataPojo);
 
-        assertEquals(expectedDataPojo, actualDataPojo);
+        //4.Step : Do assertion
+
+        assertEquals(200, response.getStatusCode());
+        assertEquals(expectedDataPojo.getMeta(), actualDataPojo.getMeta());
+        assertEquals(expectedDataPojo.getData().getName(), actualDataPojo.getData().getName());
+        assertEquals(expectedDataPojo.getData().getEmail(), actualDataPojo.getData().getEmail());
+        assertEquals(expectedDataPojo.getData().getGender(), actualDataPojo.getData().getGender());
+        assertEquals(expectedDataPojo.getData().getStatus(), actualDataPojo.getData().getStatus());
+
+
 
 
     }
