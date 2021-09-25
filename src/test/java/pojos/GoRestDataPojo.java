@@ -1,5 +1,8 @@
 package pojos;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GoRestDataPojo {
 
     private String name;
@@ -45,7 +48,7 @@ public class GoRestDataPojo {
     @Override
     public String toString() {
         return "GoRestDataPojo{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
                 ", status='" + status + '\'' +
