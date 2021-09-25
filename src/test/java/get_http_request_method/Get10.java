@@ -39,14 +39,10 @@ public class Get10 extends GoRestApiBaseUrl {
         //2.Step : Set the expected data
         GoRestDataPojo dataPojo = new GoRestDataPojo("Fr. Ajit Prajapat","ajit_fr_prajapat@barrows.org","female","active");
         GoRestPojo expectedDataPojo = new GoRestPojo(null,dataPojo);
-        System.out.println(expectedDataPojo);
 
         //3.Step : Send the request and get the response
         Response response = given().spec(spec).when().get("/{first}/{second}");
-        response.prettyPrint();
-
         GoRestPojo actualDataPojo = JsonUtil.convertJsonToJava(response.asString(),GoRestPojo.class);
-        System.out.println(actualDataPojo);
 
         //4.Step : Do assertion
 
