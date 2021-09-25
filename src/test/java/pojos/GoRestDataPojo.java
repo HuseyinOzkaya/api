@@ -1,7 +1,7 @@
 package pojos;
 
 public class GoRestDataPojo {
-    private Integer id;
+
     private String name;
     private String email;
     private String gender;
@@ -10,18 +10,13 @@ public class GoRestDataPojo {
 
     public GoRestDataPojo() {
     }
-    public GoRestDataPojo(Integer id, String name, String email, String gender, String status) {
-        this.id = id;
+    public GoRestDataPojo(String name, String email, String gender, String status) {
+
         this.name = name;
         this.email = email;
         this.gender = gender;
         this.status = status;
-    }
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
+
     }
     public String getName() {
         return name;
@@ -50,7 +45,6 @@ public class GoRestDataPojo {
     @Override
     public String toString() {
         return "GoRestDataPojo{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +

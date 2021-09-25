@@ -2,6 +2,7 @@ package get_http_request_method;
 
 import base_urls.GoRestApiBaseUrl;
 import org.junit.Test;
+import pojos.GoRestDataPojo;
 
 public class Get10 extends GoRestApiBaseUrl {
     /*
@@ -30,6 +31,8 @@ public class Get10 extends GoRestApiBaseUrl {
         spec.pathParams("first", "users", "second", 13);
 
         //2.Step : Set the expected data
+        GoRestDataPojo dataPojo = new GoRestDataPojo("Fr. Ajit Prajapat","ajit_fr_prajapat@barrows.org","female","active");
+
 
     }
 }
