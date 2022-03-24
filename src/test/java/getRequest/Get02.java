@@ -5,7 +5,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
-import pojos.Comments;
+import pojos.JsonPlaceHolderComments;
 
 import java.util.List;
 
@@ -53,7 +53,7 @@ public class Get02 extends JsonPlaceHolderBaseUrl {
     Response response = given().spec(spec).when().get("/{first}");
     response.prettyPrint();
 
-    Comments[] comments = response.as(Comments[].class);
+    JsonPlaceHolderComments[] comments = response.as(JsonPlaceHolderComments[].class);
 
 
     for (int i = 0; i < comments.length; i++) {

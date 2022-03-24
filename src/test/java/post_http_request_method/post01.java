@@ -64,7 +64,7 @@ public class post01 extends HerOkuAppBaseUrl {
         Map<String, Object> expectedData = new HashMap<>();
         expectedData.put("firstname", "Selim");
         expectedData.put("lastname", "Ak");
-        expectedData.put("totalprice", 11111.0);
+        expectedData.put("totalprice", 11111);
         expectedData.put("depositpaid", true);
         expectedData.put("bookingdates", expectedBookingdates);
 
@@ -82,7 +82,7 @@ public class post01 extends HerOkuAppBaseUrl {
         assertEquals(expectedData.get("depositpaid"), ((Map)actualData.get("booking")).get("depositpaid"));
 
         assertEquals(expectedBookingdates.get("checkin"), ((Map)((Map)actualData.get("booking")).get("bookingdates")).get("checkin"));
-        assertEquals(expectedBookingdates.get("checkin"), ((Map)((Map)actualData.get("booking")).get("bookingdates")).get("checkout"));
+        assertEquals(expectedBookingdates.get("checkout"), ((Map)((Map)actualData.get("booking")).get("bookingdates")).get("checkout"));
 
 
 

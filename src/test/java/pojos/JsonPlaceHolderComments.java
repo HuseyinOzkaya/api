@@ -4,7 +4,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class Comments {
+public class JsonPlaceHolderComments {
 
     private int postId;
     private int id;

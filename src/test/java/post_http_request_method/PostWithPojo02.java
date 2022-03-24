@@ -7,7 +7,7 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.BookingDatesPojo;
 import pojos.BookingPojo;
-import pojos.HerOkuAppPostResponseBodyPojo;
+import pojos.BookingPostResponseBodyPojo;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
@@ -61,7 +61,7 @@ public class PostWithPojo02 extends HerOkuAppBaseUrl {
     Response response = given().spec(spec).contentType(ContentType.JSON).body(requestBody).when().post("/{first}");
     response.prettyPrint();
 
-    HerOkuAppPostResponseBodyPojo actualData = response.as(HerOkuAppPostResponseBodyPojo.class);
+    BookingPostResponseBodyPojo actualData = response.as(BookingPostResponseBodyPojo.class);
     System.out.println(actualData);
 
     //4.Step : Do assertion

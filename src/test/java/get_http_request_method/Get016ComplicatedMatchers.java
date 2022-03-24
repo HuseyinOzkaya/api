@@ -13,6 +13,22 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class Get016ComplicatedMatchers extends DummyBaseUrl {
+    /**
+     * http://dummy.restapiexample.com/api/v1/employees url ine bir istek gonderildiginde
+     * Status code : 200
+     * 5. calisanin isminin "Airi Satao" oldugunu
+     * calisan sayisinin 24 oldugunu
+     * Sondan 2. calisanin maasinin 106450 oldugunu
+     * 40,21 ve 19 yaslarinda calisanlar olup olmadigini
+     * 11. calisan bilgilerinin
+     * {
+     * "id": 11,
+     * "employee_name": "Jena Gaines",
+     * "employee_salary": 90560,
+     * "employee_age": 30,
+     * "profile_image": ""
+     * }
+     */
     @Test
     public void test() throws InterruptedException {
         Response response = null;
